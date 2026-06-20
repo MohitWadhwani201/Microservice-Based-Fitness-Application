@@ -1,0 +1,115 @@
+# Maven
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+
+.project
+.classpath
+.settings/
+.factorypath
+
+# VS Code
+
+.vscode/
+
+# NetBeans
+
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+
+# Java
+
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+
+logs/
+*.log
+hs_err_pid*
+replay_pid*
+
+# OS Files
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment files
+
+.env
+.env.*
+!.env.example
+
+# Spring Boot
+
+application-local.yml
+application-local.yaml
+bootstrap-local.yml
+bootstrap-local.yaml
+
+# Config Server secrets
+
+config-repo/application-secret.yml
+config-repo/*-secret.yml
+
+# Temporary files
+
+*.tmp
+*.swp
+*.bak
+
+# Generated files
+
+generated/
+generated-sources/
+
+# Maven Wrapper
+
+.mvn/timing.properties
+
+# Test reports
+
+surefire-reports/
+failsafe-reports/
+
+# Coverage
+
+coverage/
+jacoco.exec
+
+# Node (if any frontend is added later)
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+
+*.pid
+*.seed
+
+# Mac/Linux hidden files
+
+._*
+.Trashes/
+
+# Windows hidden files
+
+$RECYCLE.BIN/
