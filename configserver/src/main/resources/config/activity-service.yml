@@ -9,7 +9,7 @@ spring:
     password: guest
   mongodb:
     database: Fitness-App
-    uri: mongodb+srv://mohitwadhwani0205:Mohit2105@java-fitness-app.giuaqrk.mongodb.net/
+    uri: "your url here"
 
 eureka:
   client:
