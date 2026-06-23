@@ -15,8 +15,10 @@ import java.util.List;
 public class ActivityController {
     private ActivityService activityService;
     @PostMapping
-    public ResponseEntity<ActivityResponse> trackActivity(@RequestBody ActivityRequest req){
-        return ResponseEntity.ok(activityService.trackActivity(req));
+    public ResponseEntity<ActivityResponse> trackActivity(
+            @RequestHeader("X-User-ID") String userId,
+            @RequestBody ActivityRequest req){
+        return ResponseEntity.ok(activityService.trackActivity(userId,req));
     }
     @GetMapping
     public ResponseEntity<List<ActivityResponse>> getUserActivities(@RequestHeader("X-User-ID") String userId){

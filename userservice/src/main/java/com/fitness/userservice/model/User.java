@@ -16,6 +16,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    private String keyCloakId;
     @Column(unique=true, nullable=false)
     private String email;
 

@@ -25,22 +25,23 @@ public class ActivityService {
     private String exchange;
     @Value("${rabbitmq.routing.key}")
     private String routingKey;
-    public ActivityResponse trackActivity(ActivityRequest req){
+    public ActivityResponse trackActivity(String userId , ActivityRequest req){
 
-
-        boolean isValidUser = userValidationService.validateUserId(req.getUserId());
+        log.info("Tracking activity");
+        boolean isValidUser = userValidationService.validateUserId(userId);
         if(!isValidUser){
-            throw new RuntimeException("Invalid User: "+ req.getUserId());
+            throw new RuntimeException("Invalid User: "+ userId);
         }
 
         Activity activity = Activity.builder()
-                .userId(req.getUserId())
+                .userId(userId)
                 .type(req.getType())
                 .duration(req.getDuration())
                 .caloriesBurned(req.getCaloriesBurned())
                 .startTime(req.getStartTime())
                 .additionalMetrics(req.getAdditionalMetrics()).build();
         Activity savedActivity = activityRepository.save(activity);
+        log.info("Saved Activity: " + savedActivity);
         // Publish to RabbitMQq for AI processing
 
         try{

@@ -14,6 +14,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 public class UserValidationService {
     private final WebClient userServiceWebClient;
     public boolean validateUserId(String userId) {
+
         log.info("Calling user Validation API for user id {}", userId);
         try {
             return userServiceWebClient.get().uri("/api/users/{userId}/validate", userId).retrieve().bodyToMono(Boolean.class).block();
