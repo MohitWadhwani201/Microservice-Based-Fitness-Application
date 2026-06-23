@@ -9,7 +9,7 @@ import { authConfig } from './authConfig.js'
 import { BrowserRouter } from 'react-router'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
+root.render(<>
   <BrowserRouter>
   <AuthProvider authConfig={authConfig}
           loadingComponent={<div>Loading...</div>}>
@@ -18,4 +18,5 @@ root.render(
   </Provider>
     </AuthProvider>
     </BrowserRouter>
+  </>
 )
